@@ -77,7 +77,8 @@ def registration():
                 if users.check_username(usrn):
                     users.save_hashed_pass(usrn, pw)
                     session["username"] = usrn
-                    return redirect(url_for("main"))
+                    #return redirect(url_for("main"))
+                    return render_template('index.html')
                 flash("Username is already exists!", "error")
                 return redirect(url_for("registration"))
             flash("Password must be at least 5 characters long!", "error")

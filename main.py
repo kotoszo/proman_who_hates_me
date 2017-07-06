@@ -56,6 +56,7 @@ def new_board(title):
 @app.route('/')
 def index():
     if 'username' not in session:
+        print('bruhuhuhu')
         return redirect(url_for('login'))
     print('juhuu')
     username = session['username']

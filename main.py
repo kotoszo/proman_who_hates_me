@@ -5,7 +5,7 @@ import data_handler
 import os
 app = Flask(__name__)
 
-"""
+
 @app.route('/getboard/<boardId>')
 def get_board(boardId):
     cards = data_handler.select_cards(boardId)
@@ -51,7 +51,7 @@ def new_board(title):
     data_handler.insert_board(user_id, title)
     board_id = data_handler.id_by_name(title)
     return json.dumps({'title': title, 'id': board_id})
-"""
+
 
 @app.route('/')
 def index():
@@ -83,18 +83,6 @@ def registration():
             flash("Password must be at least 5 characters long!", "error")
             return redirect(url_for("registration"))
     return render_template("registration.html")
-
-
-def login():
-    if request.method == 'POST':
-        session['username'] = request.form['username']
-        return redirect(url_for('index'))
-    return '''
-        <form method="post">
-            <p><input type=text name=username>
-            <p><input type=submit value=Login>
-        </form>
-    '''
 
 
 @app.route("/login", methods=["GET", "POST"])
@@ -130,12 +118,5 @@ def error_handler_404(e):
 # randomize and set the secret key.  keep this really secret:
 key = os.urandom(256)
 
-app.secret_key = key
+app.secret_key = 'A0Zr98j/3yX R~XHH!jmN]LWX/,?RT'
 
-
-def main():
-    app.run(debug=True)
-
-
-if __name__ == '__main__':
-    main()

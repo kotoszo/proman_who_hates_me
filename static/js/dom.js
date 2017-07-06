@@ -62,9 +62,6 @@ app.dom = {
                 url: '/new-board/' + String(title),
                 data: title,
                 success: function (response) {
-                    if (typeof (app.dataHandler.data) === 'object') {
-                        app.dataHandler.data = new Array;
-                    }
                     var dataw = app.dataHandler.data;
                     var newTitle = response.title;
                     var newId = response.id;

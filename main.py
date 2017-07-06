@@ -2,7 +2,6 @@ from flask import Flask, render_template, session, redirect, url_for, escape, re
 import users
 import json
 import data_handler
-import os
 app = Flask(__name__)
 
 

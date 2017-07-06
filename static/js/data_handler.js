@@ -3,7 +3,7 @@ var app = app || {};
 
 app.dataHandler = {
 
-    data: new Array,
+    data: new Array(),
     getNextBoardId: function () {
         if (this.data && this.data.boardCounter) {
             var nextBoardId = this.data.boardCounter;
@@ -22,7 +22,7 @@ app.dataHandler = {
             url: '/getboards',
             success: function (response) {
                 if (typeof (app.dataHandler.data) === 'object') {
-                    app.dataHandler.data = new Array;
+                    app.dataHandler.data = new Array();
                 }
                 for (var i=0; i<response.length; i++) {
                     app.dataHandler.data.push(response[i]);

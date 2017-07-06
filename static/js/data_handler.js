@@ -21,6 +21,9 @@ app.dataHandler = {
             dataType: 'json',
             url: '/getboards',
             success: function (response) {
+                if (typeof (app.dataHandler.data) === 'object') {
+                    app.dataHandler.data = new Array;
+                }
                 for (var i=0; i<response.length; i++) {
                     app.dataHandler.data.push(response[i]);
                 }

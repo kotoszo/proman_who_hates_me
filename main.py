@@ -60,7 +60,7 @@ def index():
     else:
         return render_template('login.html')
 
-"""
+
 @app.route("/registration", methods=["GET", "POST"])
 def registration():
     if request.method == "POST":
@@ -80,7 +80,7 @@ def registration():
             flash("Password must be at least 5 characters long!", "error")
             return redirect(url_for("registration"))
     return render_template("registration.html")
-"""
+
 
 @app.route("/login", methods=["GET", "POST"])
 def login():

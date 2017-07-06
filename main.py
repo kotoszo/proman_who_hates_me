@@ -58,10 +58,7 @@ def index():
     print(session.get('username'))
     print(request.form)
     print(request.method)
-    if 'username' in session:
-        return render_template('index.html')
-    else:
-        return render_template('login.html')
+    return render_template('index.html')
 
 
 @app.route("/registration", methods=["GET", "POST"])
@@ -77,8 +74,8 @@ def registration():
                 if users.check_username(usrn):
                     users.save_hashed_pass(usrn, pw)
                     session["username"] = usrn
-                    #return redirect(url_for("main"))
-                    return render_template('index.html')
+                    return redirect(url_for("index"))
+                    #return render_template('index.html')
                 flash("Username is already exists!", "error")
                 return redirect(url_for("registration"))
             flash("Password must be at least 5 characters long!", "error")

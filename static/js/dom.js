@@ -8,7 +8,7 @@ app.dom = {
         app.dom.checkBoardTitleInput();
 
         if ($.isEmptyObject(app.dataHandler.data)) {
-            app.dataHandler.createData();
+            //app.dataHandler.createData();
             app.dataHandler.saveBoards();
             noBoards = '<span>No boards</span>';
             $("#boards").append(noBoards);

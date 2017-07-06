@@ -51,7 +51,7 @@ app.dataHandler = {
     },
     createNewBoard: function (boardTitle) {
         if ($.isEmptyObject(this.data)) {
-            this.createData();
+            //this.createData();
             this.saveBoards();
             this.loadBoards();
         }
@@ -72,14 +72,14 @@ app.dataHandler = {
         catch (error) {
             app.dom.errorHandler(error);
         }
-    },
+    },/*
     createData: function () {
         this.data = {
             "boardCounter": 1,
             "cardCounter": 1,
             "boards": []
         }
-    },
+    },*/
     getNewCardId: function (nameOfTheList) {
         if (this.data && this.data.cardCounter) {
             var newCardId = this.data.cardCounter;

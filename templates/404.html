@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>ProMan - Error {{ error_code }}</title>
+
+    <!-- favicons -->
+    <link rel="apple-touch-icon" sizes="120x120" href="../static/img/fav/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="../static/img/fav/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="../static/img/fav/favicon-16x16.png">
+    <link rel="manifest" href="../static/img/fav/manifest.json">
+    <link rel="mask-icon" href="../static/img/fav/safari-pinned-tab.svg" color="#ff0000">
+    <meta name="apple-mobile-web-app-title" content="ProMan">
+    <meta name="application-name" content="Proman">
+
+    <link rel="stylesheet" type="text/css" href="{{url_for('static', filename='css/bootstrap.css')}}">
+    <link rel="stylesheet" type="text/css" href="{{url_for('static', filename='css/main.css')}}">
+    <link rel="stylesheet" href="{{url_for('static', filename='css/hopscotch.css')}}">
+</head>
+
+<body>
+    <nav class="navbar navbar-default navbar-fixed-top">
+        <div class=container>
+
+            <div id="add-new-board" class="row">
+                <div class="col-sm-12">
+                    <a href="/login"><img src="static/img/logo.svg" alt="tapeta logo" class="logo"></a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <section class="error-page container">
+        <h1>Error {{ error_code }} !</h1>
+        <h2>{{ error_text }}<a href="/login"> Back to Home!</a></h2>
+
+    </section>
+
+
+
+    <footer>
+        <span>@ 2017 | <b>ProMan</b> - Created by <b>tapéta</b></span>
+    </footer>
+    <script src="{{url_for('static', filename='js/jquery-3.2.1.min.js')}}"></script>
+    <script src="{{url_for('static', filename='js/bootstrap.min.js')}}"></script>
+</body>
+
+</html>

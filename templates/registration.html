@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>ProMan</title>
+
+    <!-- favicons -->
+    <link rel="apple-touch-icon" sizes="120x120" href="../static/img/fav/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="../static/img/fav/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="../static/img/fav/favicon-16x16.png">
+    <link rel="manifest" href="../static/img/fav/manifest.json">
+    <link rel="mask-icon" href="../static/img/fav/safari-pinned-tab.svg" color="#ff0000">
+    <meta name="apple-mobile-web-app-title" content="ProMan">
+    <meta name="application-name" content="Proman">
+
+    <link rel="stylesheet" type="text/css" href="{{url_for('static', filename='css/bootstrap.css')}}">
+    <link rel="stylesheet" type="text/css" href="{{url_for('static', filename='css/main.css')}}">
+    <link rel="stylesheet" href="{{url_for('static', filename='css/hopscotch.css')}}">
+</head>
+
+<body>
+    <nav class="navbar navbar-default navbar-fixed-top">
+        <div class=container>
+
+            <div class="row">
+                <div class="col-sm-12">
+                    <a href="/registration"><img src="static/img/logo.svg" alt="tapeta logo" class="logo"></a>
+                    <a class="reg-log btn btn-success" href="{{url_for('login')}}"><span class="glyphicon glyphicon-user"></span> Login</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container proman-body">
+        <h1 class="floatnone">Registration</h1>
+
+        <!-- Registration form -->
+        <form action="{{url_for('registration')}}" method="POST">
+            <div class="form-group">
+                <label for="usr">Name:</label>
+                <input type="text" class="form-control" id="usr" name="username">
+            </div>
+            <div class="form-group">
+                <label for="pwd">Password:</label>
+                <input type="password" class="form-control" id="pwd" name="password">
+            </div>
+            <div class="form-group">
+                <button class="btn btn-success" type="submit">Submit</button>
+            </div>
+        </form>
+    </div>
+    <!--Flash messages-->
+    {% with messages = get_flashed_messages(with_categories=true) %} {% if messages %} {% for category, message in messages %}
+    <div class="alert">
+        <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span> {{ message }}
+        <span id='meh'> ¯\_(ツ)_/¯ </span>
+    </div>
+
+    {% endfor %} {% endif %} {% endwith %}
+
+
+    <footer>
+        <span>@ 2017 | <b>ProMan</b> - Created by <b>tapéta</b></span>
+    </footer>
+    <script src="{{url_for('static', filename='js/jquery-3.2.1.min.js')}}"></script>
+    <script src="{{url_for('static', filename='js/bootstrap.min.js')}}"></script>
+</body>
+
+</html>

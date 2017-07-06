@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>ProMan</title>
+
+    <!-- favicons -->
+    <link rel="apple-touch-icon" sizes="120x120" href="../static/img/fav/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="../static/img/fav/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="../static/img/fav/favicon-16x16.png">
+    <link rel="manifest" href="../static/img/fav/manifest.json">
+    <link rel="mask-icon" href="../static/img/fav/safari-pinned-tab.svg" color="#ff0000">
+    <meta name="apple-mobile-web-app-title" content="ProMan">
+    <meta name="application-name" content="Proman">
+
+    <link rel="stylesheet" type="text/css" href="{{url_for('static', filename='css/bootstrap.css')}}">
+    <link rel="stylesheet" type="text/css" href="{{url_for('static', filename='css/main.css')}}">
+    <link rel="stylesheet" href="{{url_for('static', filename='css/hopscotch.css')}}">
+</head>
+
+<body>
+    <nav class="navbar navbar-default navbar-fixed-top">
+        <div class=container>
+
+            <div id="add-new-board" class="row">
+                <div class="col-sm-2">
+                    <a href="/boards"><img src="static/img/logo.svg" alt="tapeta logo" class="logo"></a>
+                </div>
+                <div id="create-new-board" class="col-sm-4 input-board">
+                    <div class="input-group">
+                        {% autoescape false %}
+                        <input id="board-title-input" type="text" class="form-control" placeholder="Title for new board">                        {% endautoescape %}
+                        <span class="input-group-btn">
+                            <button id="add-board" class="btn btn-success" type="button" disabled >Add Board</button>
+                        </span>
+                    </div>
+                </div>
+                <div id="tour-button" class="col-sm-2 info-button">
+                    <button id="info-button" type="button" class="btn btn-info pull-right">Info</button>
+                </div>
+                <div class="col-sm-4 user-buttons">
+                    {% if not session.username %}
+                    <a class="btn btn-success" href="{{url_for('registration')}}">Registration</a></li>
+                    {% endif %} {% if session.username %}
+                    <a class="reg-log btn btn-success" href="#"><span class="glyphicon glyphicon-user"></span> {{session.username}}</a>
+                    <a class="reg-log btn btn-success" href="{{url_for('logout')}}"><span class="glyphicon glyphicon-log-out"></span> Logout</a>                    {% endif %}
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <section class="proman-body">
+        <div id="messages" class="container">
+            <div class="row">
+                <div id="messages-body" class="col-sm-12"></div>
+            </div>
+        </div>
+        <div id="boards" class="container"></div>
+        <div id="cards" class="container"></div>
+    </section>
+
+    <!-- Modal -->
+    <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Edit card</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+            </button>
+                </div>
+                <div class="modal-body">
+                    <input type="text" id="edit-input">
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary" id="save">Save changes</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--Flash messages-->
+    {% with messages = get_flashed_messages(with_categories=true) %} {% if messages %} {% for category, message in messages %}
+    <div class="alert">
+        <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span> {{ message }}
+        <span id='meh'> ¯\_(ツ)_/¯ </span>
+    </div>
+    {% endfor %} {% endif %} {% endwith %}
+
+    <footer>
+        <span>@ 2017 | <b>ProMan</b> - Created by <b>tapéta</b></span>
+    </footer>
+    <script src="{{url_for('static', filename='js/jquery-3.2.1.min.js')}}"></script>
+    <script src="{{url_for('static', filename='js/bootstrap.min.js')}}"></script>
+    <script src="{{url_for('static', filename='js/settings.js')}}"></script>
+    <script src="{{url_for('static', filename='js/data_handler.js')}}"></script>
+    <script src="{{url_for('static', filename='js/dom.js')}}"></script>
+    <script src="{{url_for('static', filename='js/main.js')}}"></script>
+    <script src="{{url_for('static', filename='js/hopscotch.min.js')}}"></script>
+    <script src="{{url_for('static', filename='js/tour.js')}}"></script>
+</body>
+
+</html>

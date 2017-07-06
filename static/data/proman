@@ -1,0 +1,16 @@
+﻿CREATE TABLE users(
+	id SERIAL PRIMARY KEY,
+	username varchar(30),
+	password varchar(120)
+	);
+CREATE TABLE boards(
+	id SERIAL PRIMARY KEY,
+	user_id INT REFERENCES users(id),
+	name varchar(250)
+	);
+CREATE TABLE cards(
+	id SERIAL PRIMARY KEY,
+	board_id INT REFERENCES boards(id),
+	state varchar(250),
+	title varchar(250)
+	);

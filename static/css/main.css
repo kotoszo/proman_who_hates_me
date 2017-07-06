@@ -1,0 +1,223 @@
+/*-----------------------------------*\
+  1 - MAIN
+  2 - NAV
+  3 - BOARD LIST PAGE
+  4 - BOARD DETAILS PAGE
+  5- FOOTER
+\*-----------------------------------*/
+
+/*-----------------------------------*\
+	1 - MAIN
+\*-----------------------------------*/
+html {
+    margin: 0;
+    padding: 0;
+}
+
+.proman-body {
+    margin-top: 120px; 
+    min-height: 600px;
+}
+
+.alert {
+    text-align: center !important;
+    color: red !important;
+    font-size: 24px;
+}
+
+#meh {
+    font-size: 72px;
+}
+
+.error-page {
+    text-align: center;
+    margin-top: 100px;
+}
+/*-----------------------------------*\
+	2 - NAV
+\*-----------------------------------*/
+
+.logo {
+    width: 100px;
+    max-width: 100%;
+    height: auto;
+}
+
+.reg-log {
+    margin-top: 35px;
+    float: right;
+    padding: 8px 30px;
+    font-size: 20px;
+}
+
+.user-buttons a {
+    margin-top: 30px;
+    padding: 8px 30px;
+    font-size: 20px;
+    margin-right: 5px;
+}
+
+.user-buttons {
+    float: right;
+}
+
+.nav-label {
+    text-decoration: none;
+    font-size: 4rem;
+    color: #CC2936;
+    font-weight: 900;
+    display: inline-block;
+    margin: 27px 0;
+}
+
+.nav-label:hover {
+    text-decoration: none;
+    color: #CC2936;
+}
+
+.input-board {
+    padding: 30px 0;
+    
+}
+
+.board-title {
+    z-index: 10;
+    position: relative;
+}
+
+.info-button {
+    padding: 30px 20px;
+}
+
+.selected {
+    border: 2px solid red;
+}
+
+#board-title-input {
+    height: 50px;
+    font-size: 26px;
+    color: darkcyan;
+}
+
+#add-board {
+    padding: 11.5px;
+    font-size: 18px;
+}
+
+#board-title-input::placeholder {
+    opacity: 0.6;
+}
+
+#info-button {
+    padding: 8px 48px;
+    font-size: 20px;
+}
+
+/*-----------------------------------*\
+	3 - BOARD LIST PAGE
+\*-----------------------------------*/
+.board-col {
+    text-align: center;
+    background: #e7e7e7;
+    border-radius: 5px;
+    margin: 10px 0;
+    z-index: 1000;
+    position: relative;
+    padding: 50px 0;
+}
+
+#boards .board-col {
+    background: rgba(243,227,124,0.6);
+}
+
+#boards .board-col:hover {
+    background: rgba(243,227,124,0.8);
+    cursor: pointer;
+}
+
+.board-title {
+    font-size: 32px;
+    color: darkcyan;
+}
+
+/*-----------------------------------*\
+	4 - BOARD DETAILS PAGE
+\*-----------------------------------*/
+#cards h1 {
+    text-align: center;
+    padding-bottom: 30px;
+    font-weight: bold;
+    color: darkcyan;
+}
+
+.card-col {
+    text-align: center;
+    background: #e7e7e7;
+    border-radius: 5px;
+    padding: 0px 0;
+    margin: 25px 0;
+}
+
+.list {
+    background: #888;
+    padding: 20px;
+    border-radius: 5px;
+}
+
+.card-wrapper {
+    min-height: 140px;
+    margin-bottom: 50px;
+}
+
+.card-text {
+    padding: 20px 0;
+    font-size: 22px;
+    word-wrap: break-word;
+}
+
+.edit-button {
+    padding: 7px 55px;
+    margin: 10px 0;
+}
+
+#cards .list a:hover {
+    text-decoration: none;
+}
+
+#cards .list a {
+    font-size: 20px;
+    text-shadow: 1px 1px 1px black;
+    color: white;
+}
+.card-header {
+    color: whitesmoke;
+    text-shadow: 1px 1px 1px black;
+}
+
+
+#cards textarea {
+        margin-top: 15px;
+    border-radius: 5px;
+    padding: 10px;
+    color: darkcyan;
+}
+
+.card-wrapper button {
+    margin: 10px 0;
+    padding: 8px 40px;
+}
+
+.card-col button {
+    margin: 10px 0;
+    padding: 8px 40px;
+}
+/*-----------------------------------*\
+	5 - FOOTER
+\*-----------------------------------*/
+
+footer {
+    text-align: center;
+    padding: 20px 0;
+    background: #e7e7e7;
+    margin-top: 10px;
+}

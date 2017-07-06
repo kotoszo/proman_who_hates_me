@@ -1,0 +1,58 @@
+
+{
+    "boardCounter": 3,
+    "cardCounter": 7,
+    "boards": [
+        {
+            "id": 1,
+            "title": "Test board 1",
+            "state": 1,
+            "newList": [
+                {
+                    "id": 1,
+                    "title": "task1",
+                    "order": 1
+                },
+                {
+                    "id": 2,
+                    "title": "task2",
+                    "order": 2
+                },
+                {
+                    "id": 3,
+                    "title": "task3",
+                    "order": 3
+                }
+            ],
+            "inProgressList": [],
+            "reviewList": [],
+            "doneList": []
+        },
+        {
+            "id": 2,
+            "title": "Test board 2",
+            "state": 1,
+            "newList": [
+                {
+                    "id": 4,
+                    "title": "task1",
+                    "order": 1
+                },
+                {
+                    "id": 5,
+                    "title": "task2",
+                    "order": 2
+                },
+                {
+                    "id": 6,
+                    "title": "task3",
+                    "order": 3
+                }
+            ],
+            "inProgressList": [],
+            "reviewList": [],
+            "doneList": []
+        }
+    ]
+}
+ 

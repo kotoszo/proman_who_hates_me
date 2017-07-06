@@ -55,6 +55,9 @@ def new_board(title):
 
 @app.route('/')
 def index():
+    print(session.get('username'))
+    print(request.form)
+    print(request.method)
     if 'username' in session:
         return render_template('index.html')
     else:

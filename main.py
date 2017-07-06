@@ -55,10 +55,11 @@ def new_board(title):
 
 @app.route('/')
 def index():
-    print(session.get('username'))
-    print(request.form)
-    print(request.method)
-    return render_template('login.html')
+    if 'username' not in session:
+        return redirect(url_for('login'))
+    print('juhuu')
+    username = session['username']
+    return render_template('login.html', username=username)
 
 
 @app.route("/registration", methods=["GET", "POST"])
@@ -81,6 +82,18 @@ def registration():
             flash("Password must be at least 5 characters long!", "error")
             return redirect(url_for("registration"))
     return render_template("registration.html")
+
+
+def login():
+    if request.method == 'POST':
+        session['username'] = request.form['username']
+        return redirect(url_for('index'))
+    return '''
+        <form method="post">
+            <p><input type=text name=username>
+            <p><input type=submit value=Login>
+        </form>
+    '''
 
 
 @app.route("/login", methods=["GET", "POST"])

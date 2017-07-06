@@ -58,7 +58,7 @@ def index():
     print(session.get('username'))
     print(request.form)
     print(request.method)
-    return render_template('index.html')
+    return render_template('login.html')
 
 
 @app.route("/registration", methods=["GET", "POST"])
